@@ -88,18 +88,6 @@ class CreatePermissionTables extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('role_id');
         });
-//        Schema::table($tableNames['roles'], function (Blueprint $table) {
-//            $table->dropColumn('scope');
-//        });
-//        Schema::table($tableNames['roles'], function (Blueprint $table) {
-//            $table->dropColumn('created_by');
-//        });
-//        Schema::table($tableNames['roles'], function (Blueprint $table) {
-//            $table->dropColumn('deleted_at');
-//        });
-//        Schema::table($tableNames['roles'], function (Blueprint $table) {
-//            $table->string('guard_name')->nullable()->after('name');
-//        });
 
         $roleOwner = \App\Models\Role::create(['name' => 'admin']);
         $roleMember = \App\Models\Role::create(['name' => 'member']);
