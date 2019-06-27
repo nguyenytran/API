@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('phone', 45)->nullable();
             $table->string('profile_picture')->nullable();
             $table->tinyInteger('is_active')->default(0);
-            $table->unsignedTinyInteger('created_by');
+            $table->unsignedTinyInteger('created_by')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

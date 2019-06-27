@@ -22,8 +22,11 @@ Route::get('/', function () {
 Route::post('authorization', 'AuthorizationController@store');
 Route::delete('authorization', 'AuthorizationController@destroy');
 
+// register
+Route::post('register', 'RegisterUserController@store');
+
 Route::group(['middleware' => ['auth:api', 'throttle:1000']], function (Router $router) {
-    // Users
+    // users
     $router->group(['prefix' => 'users'], function () use ($router) {
         $router->get('/me', ['uses' => 'UserController@show']);
         $router->put('/change-password', ['uses' => 'UserController@changePassword']);
