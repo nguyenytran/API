@@ -25,7 +25,7 @@ Route::delete('authorization', 'AuthorizationController@destroy');
 // register
 Route::post('register', 'RegisterUserController@store');
 
-Route::group(['middleware' => ['auth:api', 'throttle:1000']], function (Router $router) {
+Route::group(['middleware' => ['auth:api']], function (Router $router) {
     // users
     $router->group(['prefix' => 'users'], function () use ($router) {
         $router->get('/me', ['uses' => 'UserController@show']);
