@@ -246,10 +246,6 @@ class UserController extends Controller
      */
     public function logout($id)
     {
-        if (!user()->isAdmin()) {
-            return $this->sendForbiddenResponse();
-        }
-
         $user = $this->userRepository->findOne($id);
 
         if (!$user instanceof User) {

@@ -24,6 +24,7 @@ $factory->define(\App\Models\User::class, function (Faker\Generator $faker) {
         'address'               => $faker->address,
         'phone'                 => $faker->phoneNumber,
         'profile_picture'       => $faker->imageUrl('100'),
+        'company_web'           => $faker->url,
         'is_active'             => 1,
         'created_by'            => 1,
     ];

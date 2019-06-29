@@ -55,8 +55,7 @@ Route::group(['middleware' => ['auth:api']], function (Router $router) {
             'middleware' => ['role_or_permission:admin|delete users']
         ]);
         $router->delete('{id}/logout', [
-            'uses' => 'UserController@logout',
-            'middleware' => ['role:admin']
+            'uses' => 'UserController@logout'
         ]);
     });
 });

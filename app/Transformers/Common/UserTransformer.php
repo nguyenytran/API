@@ -27,7 +27,7 @@ class UserTransformer extends AbstractTransformer
             'gender'            => $user->gender,
             'address'           => $user->address,
             'phone'             => $user->phone,
-            'profile_picture'   => $user->profile_picture,
+            'profile_picture'   => $user->profile_picture ?? config('common.profile_picture'),
             'is_active'         => $user->is_active,
             'created_at'        => (string) $user->created_at,
             'updated_at'        => (string) $user->updated_at,

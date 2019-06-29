@@ -74,6 +74,7 @@ class RegisterUserController extends Controller
             'address' => 'max:255',
             'phone' => 'max:45',
             'profile_picture' => 'max:255',
+            'company_web' => 'max:225'
         ];
 
         return $rules;
