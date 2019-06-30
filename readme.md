@@ -26,7 +26,7 @@
         ```
     - Migration:
         ```
-        ./dockerctl a migrate:refresh --seed
+        ./dcp a migrate --seed
         ```
     - API installation:
         ```
