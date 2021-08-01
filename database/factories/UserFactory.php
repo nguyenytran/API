@@ -19,7 +19,7 @@ $factory->define(\App\Models\User::class, function (Faker\Generator $faker) {
         'email'                 => $faker->email,
         'name'                  => $faker->name,
         'username'              => $faker->userName,
-        'password'              => \Illuminate\Support\Facades\Hash::make('password'),
+        'password'              => bcrypt('password'),
         'gender'                => rand(1, 3),
         'address'               => $faker->address,
         'phone'                 => $faker->phoneNumber,

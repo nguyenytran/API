@@ -7,7 +7,6 @@ namespace App\Repositories;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Hash;
 
 class EloquentUserRepository extends AbstractEloquentRepository implements UserRepository
 {
@@ -19,7 +18,7 @@ class EloquentUserRepository extends AbstractEloquentRepository implements UserR
     public function save(array $data)
     {
         if (isset($data['password'])) {
-            $data['password'] = Hash::make($data['password']);
+            $data['password'] = bcrypt($data['password']);
         }
         return $this->getModel()->getConnection()->transaction(function () use ($data) {
             /** @var User $user */
